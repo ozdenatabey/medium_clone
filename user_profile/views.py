@@ -30,3 +30,9 @@ def logout_view(request):
     messages.info(request, f'{request.user.username}Oturum kapatildi.')
     logout(request)
     return redirect('home_view')
+
+def register_view(request):
+    context = dict()
+    if request.method == "POST":
+        print(request.POST)
+    return render(request, 'user_profile/register.html', context)

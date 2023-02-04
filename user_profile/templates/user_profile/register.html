@@ -1,0 +1,48 @@
+{% extends 'core/base_without_navbar.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+          <h1>Sign Up:</h1>
+            <form method="post">
+                {% csrf_token %}
+                <!-- formda method belirtmeyi unutma! eger aramada gozukmeyecekse method POST olmali -->
+                <!-- her input bilgisinin name bilgisi olması gerekir -->
+                <!-- csrf token bilgisi olmali -->
+                <div class="mb-3">
+                  <label for="first_name" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="first_name" name="first_name">
+                </div>
+                <div class="mb-3">
+                  <label for="last_name" class="form-label">Last Name</label>
+                  <input type="email" class="form-control" id="last_name" name="last_name">
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                </div>
+                <div class="mb-3">
+                  <label for="email-confirm" class="form-label">Email - Confirm</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email-confirm">
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                </div>
+                <div class="mb-3">
+                  <label for="password-confirm" class="form-label">Password - Confirm</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="password-confirm">
+                </div>
+                <div class="mb-3">
+                  <label for="instagram" class="form-label">Instagram Account</label>
+                  <input type="text" class="form-control" id="instagram" name="instagram">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <a href="{% url 'user_profile:login_view' %}" class="btn btn-info">Login</a>
+                <a href="{% url 'home_view' %}" class="btn btn-secondary">Cancel</a>
+              </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
