@@ -1,8 +1,13 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 
 def login_view(request):
     # login olan kullanici direk olarak ana sayfaya gitsin
+    if request.user.is_authenticated:
+        messages.info(request, f'{request.user.username}Daha önce login olmuşsun.')
+        return redirect('home_view')
+
     context = dict()
     if request.method == "POST":
         # print(request.POST)
@@ -13,6 +18,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
+            messages.success(request, f'{request.user.username}Login oldun.')
             # login oldugunu kullaniciya belli edelim
             return redirect('home_view')
     return render(request, 'user_profile/login.html', context)
