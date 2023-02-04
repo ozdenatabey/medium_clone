@@ -13,8 +13,11 @@ def login_view(request):
         # print(request.POST)
         username = request.POST.get('username')
         password = request.POST.get('password')
-        print(username, password)
-        # bu bilgileri dogru aldik mi?
+        
+        if len(username) < 6 or len(password) < 6:
+            messages.warning(request, f'Lutfen Bilgileri Dogru Giriniz..')
+            return redirect('user_profile:login_view')
+        
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
