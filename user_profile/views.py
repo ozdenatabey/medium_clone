@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 def login_view(request):
     # login olan kullanici direk olarak ana sayfaya gitsin
@@ -22,3 +22,8 @@ def login_view(request):
             # login oldugunu kullaniciya belli edelim
             return redirect('home_view')
     return render(request, 'user_profile/login.html', context)
+
+def logout_view(request):
+    messages.info(request, f'{request.user.username}Oturum kapatildi.')
+    logout(request)
+    return redirect('home_view')
