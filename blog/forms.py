@@ -1,10 +1,10 @@
 from django import forms
-from .models import Post
+from .models import BlogPost
 
-class PostModelForm(forms.ModelForm):
+class BlogPostModelForm(forms.ModelForm):
     tag = forms.CharField(max_length=200)
     class Meta:
-        model = Post
+        model = BlogPost
         fields = [
             'title',
             'content',
