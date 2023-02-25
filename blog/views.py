@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
+import json
+
 from .forms import BlogPostModelForm
 from .models import Category, Tag, BlogPost
-import json
 
 @login_required(login_url='user:login_view')
 def create_blog_post_view(request):
@@ -18,6 +21,8 @@ def create_blog_post_view(request):
             for item in tags:
                 tag_item, created = Tag.objects.get_or_create(title=item.get('value'))
                 f.tag.add(tag_item)
+            messages.success(request,'Blog Postunuz Başarıyla Oluşturuldu. Ana Sayfaya Yönlendiriliyorsunuz..')
+            return redirect('home_view')
             
     context = dict(
         form=form
