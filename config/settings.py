@@ -154,9 +154,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # TODO: Sign Up *Avatar? Instagram? user_slug? / one_to_one / profile
 # TODO: Reset Password
 # TODO: User Avatar, Instagram Account, user_slug(first_name, last_name)
-# TODO: Blog App
-# TODO: Post (Login olan kullanici)
-# TODO: User Tag Olusturabilir* Kullanici Tag Bilgilerini Virgul İle Ayirarak Gonderecek
+# DONE: Blog App
+# DONE: Post (Login olan kullanici)
+# DONE: User Tag Olusturabilir* Kullanici Tag Bilgilerini Virgul İle Ayirarak Gonderecek
 # TODO: Populer Olanlar / En Cok Okunanlar
 # TODO: User Fav
 # TODO: PAGE App Model Yapisi / Admin
