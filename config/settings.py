@@ -42,7 +42,8 @@ BASE_APPS = [
 THIRD_PARTY_APPS =[
     'tinymce',
     'crispy_forms',
-    'crispy_bootstrap5'
+    'crispy_bootstrap5',
+    'django_extensions',
 ]
     
 MY_APPS = [
