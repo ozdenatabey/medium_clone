@@ -14,6 +14,7 @@ class CommonModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     class Meta:
         abstract = True
+        ordering = ('title',)
 
 class Category(CommonModel):
     def __str__(self):
@@ -52,6 +53,8 @@ class BlogPost(CommonModel):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ('-created_at',)
     # def get_absolute_url(self):
     #     return reverse(
     #         'blog:post_detail_view',
