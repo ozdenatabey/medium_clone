@@ -50,6 +50,7 @@ THIRD_PARTY_APPS =[
 MY_APPS = [
     'blog',
     'page',
+    'read',
     'user_profile',
 ]
 
