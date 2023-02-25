@@ -55,6 +55,7 @@ class BlogPost(CommonModel):
 
     class Meta:
         ordering = ('-created_at',)
+        
     # def get_absolute_url(self):
     #     return reverse(
     #         'blog:post_detail_view',
