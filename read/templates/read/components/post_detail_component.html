@@ -14,7 +14,7 @@
         <div>
           <a href="{{ post.user.profile.get_absolute_url }}" class="text-decoration-none text-muted">
             <img
-              src="https://picsum.photos/id/212/30/30?grayscale"
+              src="{{ post.user.profile.avatar|thumbnail_url:'avatar' }}"
               class="rounded-circle"
               alt=""
             />
