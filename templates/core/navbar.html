@@ -42,7 +42,7 @@
                         <li><a class="dropdown-item" href="{{ request.user.profile.get_profile_edit_url }}">
                             Edit Profile
                         </a></li>
-                        <li><a class="dropdown-item" href="#">Favs</a></li>
+                        <li><a class="dropdown-item" href="{{ request.user.profile.get_favs_url }}">Favs</a></li>
                       </ul>
                     </li>
                     <li class="nav-item">

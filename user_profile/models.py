@@ -23,3 +23,8 @@ class Profile(models.Model):
         return reverse(
             'user:profile_edit_view',
         )
+    
+    def get_favs_url(self):
+        return reverse(
+            'user:user_fav_view',
+        )
